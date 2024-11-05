@@ -76,7 +76,7 @@ public class UserController {
         try {
             String name = principal.getName();
             User user = userRepository.getUserByUserName(name);
-
+            System.out.println("INSIDE 79"+contact);
             // Process and upload file
             if (file.isEmpty()) {
                 contact.setImage("contact.png");
