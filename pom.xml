@@ -112,16 +112,22 @@
 </dependency>
 
 
-		<dependency>
-			<groupId>com.jpa</groupId>
-			<artifactId>bootdevtool</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.jpa</groupId>-->
+<!--			<artifactId>bootdevtool</artifactId>-->
+<!--			<version>0.0.1-SNAPSHOT</version>-->
+<!--		</dependency>-->
 		
+<!--		<dependency>-->
+<!--			<groupId>com.jpa.test</groupId>-->
+<!--			<artifactId>bootjpaexample</artifactId>-->
+<!--			<version>0.0.1-SNAPSHOT</version>-->
+<!--		</dependency>-->
+
 		<dependency>
-			<groupId>com.jpa.test</groupId>
-			<artifactId>bootjpaexample</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>com.razorpay</groupId>
+			<artifactId>razorpay-java</artifactId>
+			<version>1.4.3</version>
 		</dependency>
 
 	</dependencies>

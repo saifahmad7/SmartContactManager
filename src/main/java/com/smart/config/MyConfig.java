@@ -33,18 +33,20 @@ public class MyConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .authorizeHttpRequests()
-                .requestMatchers("/admin/**").hasRole("ADMIN")
-                .requestMatchers("/user/**").hasRole("USER")
-                .requestMatchers("/**").permitAll()
-            .and()
-            .formLogin()
-                .loginPage("/signin")
-                .loginProcessingUrl("/dologin")
-                .defaultSuccessUrl("/user/index")
-               // .failureUrl("/login-fail")
-            .and()
-            .csrf().disable();
+                // Define authorization rules for specific URL patterns
+                .authorizeHttpRequests(authz -> authz
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/user/**").hasRole("USER")
+                        .requestMatchers("/**").permitAll()
+                )
+                // Set up form-based login
+                .formLogin(form -> form
+                        .loginPage("/signin")
+                        .loginProcessingUrl("/dologin")
+                        .defaultSuccessUrl("/user/index", true) // 'true' ensures it's an absolute redirect
+                )
+                // Disable CSRF (use with caution in production)
+                .csrf(csrf -> csrf.disable());
 
         return http.build();
     }
